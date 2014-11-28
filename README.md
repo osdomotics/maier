@@ -1,9 +1,6 @@
 ### Welcome to Maier
 =====
-
 A solution built for makers, teachers and students 
-
-
 
 Maier is a **web-based visual programming editor for [Arduino like IoT Merkurboard](http://merkurborad.osdomotics.com/)**.
 
