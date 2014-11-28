@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WebDruino</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+
+	<script src="js/jquery-2.1.1.min.js"></script> 
+
+	<script src="js/simple-slider.js"></script>
+
+	<link href="css/simple-slider.css" rel="stylesheet" type="text/css" />
+	<link href="css/simple-slider-volume.css" rel="stylesheet" type="text/css" />  
+
+<style>
+[class^=slider] { display: inline-block; margin-bottom: 0}
+</style>
+
+	<link href="css/bootstrap.css" rel="stylesheet">	
+	<link href="css/bootstrap-theme.css" rel="stylesheet"> 
+
+	<script>			  
+      var g1, g2, g3, g4, g5, g6;
+      
+      window.onload = function(){
+
+		var g1 = new JustGage({
+			id: "g1", 
+			value: VAR_analog_output1, 
+			min: 0,
+			max: 100,
+			title: "Analog Output 1",
+			label: "",    
+			gaugeWidthScale: 0.4          
+		});
+
+		var g2 = new JustGage({
+			id: "g2", 
+			value: VAR_analog_output2, 
+			min: 0,
+			max: 100,
+			title: "Analog Output 2",
+			label: "",    
+			gaugeWidthScale: 0.4          
+		});		
+		
+		var g3 = new JustGage({
+			id: "g3", 
+			value: VAR_analog_output3, 
+			min: 0,
+			max: 100,
+			title: "Analog Output 3",
+			label: "",    
+			gaugeWidthScale: 0.4          
+		});		
+
+		var g4 = new JustGage({
+			id: "g4", 
+			value: VAR_analog_output4, 
+			min: 0,
+			max: 100,
+			title: "Analog Output 4",
+			label: "",    
+			gaugeWidthScale: 0.4          
+		});		
+		
+		$("#serial_name").val("VAR_serial_name");
+
+		$("#update_serial_name_btn").click(function () {
+			$.get( "/configcomms.html", { name: $("#serial_name").val(), tm:VAR_tval }, 0 ); });	
+		
+		$("#analoginput1").bind("slider:changed", function (event, data) {	$.post("/analoginput.html",  {  aot:"1",  aod:data.value  }, 0 ); });
+		$("#analoginput2").bind("slider:changed", function (event, data) {	$.post("/analoginput.html",  {  aot:"2",  aod:data.value  }, 0 ); });
+		$("#analoginput3").bind("slider:changed", function (event, data) {	$.post("/analoginput.html",  {  aot:"3",  aod:data.value  }, 0 ); });
+		$("#analoginput4").bind("slider:changed", function (event, data) {	$.post("/analoginput.html",  {  aot:"4",  aod:data.value  }, 0 ); });
+				
+		$("#analoginput5").bind("slider:changed", function (event, data) {	$.post("/analoginput.html",  {  aot:"5",  aod:data.value  }, 0 ); });
+		$("#analoginput6").bind("slider:changed", function (event, data) {	$.post("/analoginput.html",  {  aot:"6",  aod:data.value  }, 0 ); });
+		$("#analoginput7").bind("slider:changed", function (event, data) {	$.post("/analoginput.html",  {  aot:"7",  aod:data.value  }, 0 ); });
+		$("#analoginput8").bind("slider:changed", function (event, data) {	$.post("/analoginput.html",  {  aot:"8",  aod:data.value  }, 0 ); });
+		
+		var auto_refresh = setInterval(
+		function ()
+		{
+			$("#comms_log").load("/readcomms.html?value=VAR_tval");
+			$.get( "/readanalog.html?input=1&amp;value=VAR_tval", function( data ) { g1.refresh(data); });
+			$.get( "/readanalog.html?input=2&amp;value=VAR_tval", function( data ) { g2.refresh(data); });
+			$.get( "/readanalog.html?input=3&amp;value=VAR_tval", function( data ) { g3.refresh(data); });
+			$.get( "/readanalog.html?input=4&amp;value=VAR_tval", function( data ) { g4.refresh(data); });
+
+			$.get("/readdigital.html?input=01&amp;value=VAR_tval", function (data) { $("#digital00").attr("src", data+"?VAR_tval"); });
+			$.get("/readdigital.html?input=02&amp;value=VAR_tval", function (data) { $("#digital01").attr("src", data+"?VAR_tval"); });
+			$.get("/readdigital.html?input=03&amp;value=VAR_tval", function (data) { $("#digital02").attr("src", data+"?VAR_tval"); });
+			$.get("/readdigital.html?input=04&amp;value=VAR_tval", function (data) { $("#digital03").attr("src", data+"?VAR_tval"); });
+			$.get("/readdigital.html?input=05&amp;value=VAR_tval", function (data) { $("#digital04").attr("src", data+"?VAR_tval"); });
+			$.get("/readdigital.html?input=06&amp;value=VAR_tval", function (data) { $("#digital05").attr("src", data+"?VAR_tval"); });
+			$.get("/readdigital.html?input=07&amp;value=VAR_tval", function (data) { $("#digital06").attr("src", data+"?VAR_tval"); });
+			$.get("/readdigital.html?input=08&amp;value=VAR_tval", function (data) { $("#digital07").attr("src", data+"?VAR_tval"); });
+			$.get("/readdigital.html?input=09&amp;value=VAR_tval", function (data) { $("#digital08").attr("src", data+"?VAR_tval"); });
+			$.get("/readdigital.html?input=10&amp;value=VAR_tval", function (data) { $("#digital09").attr("src", data+"?VAR_tval"); });
+			$.get("/readdigital.html?input=11&amp;value=VAR_tval", function (data) { $("#digital10").attr("src", data+"?VAR_tval"); });
+			$.get("/readdigital.html?input=12&amp;value=VAR_tval", function (data) { $("#digital11").attr("src", data+"?VAR_tval"); });
+			$.get("/readdigital.html?input=13&amp;value=VAR_tval", function (data) { $("#digital12").attr("src", data+"?VAR_tval"); });
+			$.get("/readdigital.html?input=14&amp;value=VAR_tval", function (data) { $("#digital13").attr("src", data+"?VAR_tval"); });
+
+			
+		}, VAR_update_rate ); // refresh every 2000 milliseconds
+	
+	}
+	</script>
+
+  </head>
+  <body>
+  
+ 	<div class="container">
+	
+	<nav class="navbar navbar-default" role="navigation">
+	
+	<div class="container-fluid">	
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+		  <a class="navbar-brand" href="#">WebDruino</a>
+		</div>
+	
+		<div class="collapse navbar-collapse">
+		<nav class="navbar-form navbar-left" role="search">
+		<div class="btn-group">
+			<button onclick="location.href='/config.html';" class="btn btn-warning">Config</button>
+
+			<button onclick="location.href='/code_page.html';" class="btn btn-info">Code</button>
+		</div>
+		</nav>
+		<nav class="navbar-form navbar-right" role="search">
+		<div class="btn-group">
+			<button onclick="location.href='/enablecomms.html?VAR_tval';" class="btn btn-danger">Reset Serial</button>
+		</div>
+  
+		<div class="input-group">
+		  <span class="input-group-btn">
+			<button id="update_serial_name_btn" class="btn btn-default" type="button">Device</button>
+		  </span>
+		  <input  id="serial_name" type="text" class="form-control" style="width:80px;">
+		</div><!-- /input-group -->
+		</nav>
+	</div>
+	</div>
+	
+	</nav>
+
+	<div class="row">
+	  <div class="col-xs-8">
+			<div class="panel panel-default">
+			  <div class="panel-heading"><h8>Arduino Controls - Analog Outputs</h8></div>
+			  <div class="panel-body">
+				<div class="row">	
+					<div id="g1" style="width:150px; height:120px;display: inline-block;margin: 1em;"></div> 
+					<div id="g2" style="width:150px; height:120px;display: inline-block;margin: 1em;"></div> 
+					<div id="g3" style="width:150px; height:120px;display: inline-block;margin: 1em;"></div> 
+					<div id="g4" style="width:150px; height:120px;display: inline-block;margin: 1em;"></div> 
+				</div>
+			  </div>
+			</div>
+
+			<div class="panel panel-default">
+			  <div class="panel-heading"><h8>Arduino Controls - Analog Inputs</h8></div>
+			  <div class="panel-body">
+				<p>Input is converted from 0.0->1.0 to 0->1024</p>
+			  </div>
+				
+			  <table  class="table" width="100%">
+				<tr>
+				<td>AI 0</td>
+				<td><input id="analoginput1" type="text" data-slider="true"></td>
+				<td>AI 1</td>
+				<td><input id="analoginput2" type="text" data-slider="true"></td>
+				</tr>
+				<tr>
+				<td>AI 2</td>
+				<td><input id="analoginput3" type="text" data-slider="true"></td>
+				<td>AI 3</td>
+				<td><input id="analoginput4" type="text" data-slider="true"></td>
+				</tr>
+				<tr>
+				<td>AI 4</td>
+				<td><input id="analoginput5" type="text" data-slider="true"></td>
+				<td>AI 5</td>
+				<td><input id="analoginput6" type="text" data-slider="true"></td>
+				</tr>
+				<tr>
+				<td>AI 6</td>
+				<td><input id="analoginput7" type="text" data-slider="true"></td>
+				<td>AI 7</td>
+				<td><input id="analoginput8" type="text" data-slider="true"></td>
+				</tr>
+			  </table>
+			</div>
+			
+			
+	  </div>
+
+	  
+	  <div class="col-md-4">
+		<div class="panel panel-default">
+			<div class="panel-heading"><h8>Arduino Controls - Digital</h8></div>
+			<div class="panel-body">
+			  <p>Green is HIGH and Red is LOW. Grey is disabled.<br> Press to toggle (only enabled ones)</p>
+			</div>
+				
+			<table  class="table" width="100%">
+				<tr>
+				<td><img id="digital00" alt="" /> D0</td>
+				<td><img id="digital04" alt="" /> D4</td>
+				<td><img id="digital08" alt="" /> D8</td>
+				<td><img id="digital12" alt="" /> D12</td>
+				</tr>
+				<tr>
+				<td><img id="digital01" alt="" /> D1</td>
+				<td><img id="digital05" alt="" /> D5</td>
+				<td><img id="digital09" alt="" /> D9</td>
+				<td><img id="digital13" alt="" /> D13</td>
+				</tr>
+				<tr>
+				<td><img id="digital02" alt="" /> D2</td>
+				<td><img id="digital06" alt="" /> D6</td>
+				<td><img id="digital10" alt="" /> D10</td>
+				</tr>
+				<tr>
+				<td><img id="digital03" alt="" /> D3</td>
+				<td><img id="digital07" alt="" /> D7</td>
+				<td><img id="digital11" alt="" /> D11</td>
+				</tr>
+			</table>
+
+			</div>  
+		<div class="panel panel-default">
+			<div class="panel-heading"><h8>Notes</h8></div>
+			<div class="panel-body">
+			  <p>On Arduino devices most share their digital outputs<br>
+			  with the analog outputs. The result is a single digital<br>
+			  pin can be used to drive digital or analog outputs.<br>
+			  Use the config to define how your Arduino is used.</p>
+			</div>
+		</div>
+	  </div>
+	</div>
+
+	<div class="panel-group" id="accordion">
+	  <div class="panel panel-default">
+		<div class="panel-heading">
+		  <h4 class="panel-title">
+			<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+			  <h8>Logging</h8>
+			</a>
+		  </h4>
+		</div>
+		<div id="collapseOne" class="panel-collapse collapse in">
+		  <div class="panel-body">
+			<div id="comms_log" style="height:200px;overflow: auto">
+			</div>
+		  </div>
+		</div>
+	  </div>	
+	</div>	
+	
+	</div> <!-- container -->
+	
+    <!-- Load JS here for greater good =============================-->
+	<script src="js/bootstrap.js"></script>		
+	<script src="js/raphael.2.1.0.min.js"></script>
+    <script src="js/justgage.1.0.1.min.js"></script>
+  <script>
+		$("[data-slider]")
+		.each(function () {
+		  var input = $(this);
+		  $("<span>")
+			.addClass("output")
+			.insertAfter($(this));
+		})
+		.bind("slider:ready slider:changed", function (event, data) {
+		  $(this)
+			.nextAll(".output:first")
+			  .html(data.value.toFixed(3));
+		});
+  </script>
+  </body>
+</html>
