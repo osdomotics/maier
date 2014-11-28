@@ -5,7 +5,7 @@ A solution built for makers, teachers and students
 
 
 
-Maier is a **web-based visual programming editor for [Arduino like IoT Merkurboar](http://www.arduino.cc/)**.
+Maier is a **web-based visual programming editor for [Arduino like IoT Merkurboard](http://merkurborad.osdomotics.com/)**.
 
 Maier is based on [Blockly](http://code.google.com/p/blockly/), the web-based, graphical programming editor. Provide static type language blocks and code generators for arduino programming.
 
