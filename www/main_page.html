@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>WebDruino</title>
+    <title>Maier</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
 
 	<script src="js/jquery-2.1.1.min.js"></script> 
@@ -118,15 +118,16 @@
 	<div class="container-fluid">	
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
-		  <a class="navbar-brand" href="#">WebDruino</a>
+		  <!--   <a class="navbar-brand" Maierlogo</a> -->
+          <a href="#"><img src="img/maierlogo.png" width="110" height="77" border="0" alt="Home"></a>
 		</div>
 	
 		<div class="collapse navbar-collapse">
 		<nav class="navbar-form navbar-left" role="search">
 		<div class="btn-group">
-			<button onclick="location.href='/config.html';" class="btn btn-warning">Config</button>
+			<button onclick="location.href='config_page.html';" class="btn btn-warning">Config</button>
 
-			<button onclick="location.href='/code_page.html';" class="btn btn-info">Code</button>
+			<button onclick="location.href='code_page.html';" class="btn btn-info">Code</button>
 		</div>
 		</nav>
 		<nav class="navbar-form navbar-right" role="search">
@@ -149,7 +150,7 @@
 	<div class="row">
 	  <div class="col-xs-8">
 			<div class="panel panel-default">
-			  <div class="panel-heading"><h8>Arduino Controls - Analog Outputs</h8></div>
+			  <div class="panel-heading"><h8>Merkurboard Controls - Analog Outputs</h8></div>
 			  <div class="panel-body">
 				<div class="row">	
 					<div id="g1" style="width:150px; height:120px;display: inline-block;margin: 1em;"></div> 
@@ -161,7 +162,7 @@
 			</div>
 
 			<div class="panel panel-default">
-			  <div class="panel-heading"><h8>Arduino Controls - Analog Inputs</h8></div>
+			  <div class="panel-heading"><h8>Merkurboard Controls - Analog Inputs</h8></div>
 			  <div class="panel-body">
 				<p>Input is converted from 0.0->1.0 to 0->1024</p>
 			  </div>
@@ -200,7 +201,7 @@
 	  
 	  <div class="col-md-4">
 		<div class="panel panel-default">
-			<div class="panel-heading"><h8>Arduino Controls - Digital</h8></div>
+			<div class="panel-heading"><h8>Merkurboard Controls - Digital</h8></div>
 			<div class="panel-body">
 			  <p>Green is HIGH and Red is LOW. Grey is disabled.<br> Press to toggle (only enabled ones)</p>
 			</div>
@@ -234,10 +235,10 @@
 		<div class="panel panel-default">
 			<div class="panel-heading"><h8>Notes</h8></div>
 			<div class="panel-body">
-			  <p>On Arduino devices most share their digital outputs<br>
+			  <p>On Merkurboard devices most share their digital outputs<br>
 			  with the analog outputs. The result is a single digital<br>
 			  pin can be used to drive digital or analog outputs.<br>
-			  Use the config to define how your Arduino is used.</p>
+			  Use the config to define how your Merkurboard is used.</p>
 			</div>
 		</div>
 	  </div>

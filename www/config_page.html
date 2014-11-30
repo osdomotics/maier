@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>WebDruino</title>
+    <title>Maier</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
 
 	<script src="js/jquery-2.1.1.min.js"></script> 
@@ -55,13 +55,14 @@
 	<div class="container-fluid">	
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
-		  <a class="navbar-brand" href="#">WebDruino</a>
+		  <!--   <a class="navbar-brand" Maierlogo</a> -->
+          <a href="#"><img src="img/maierlogo.png" width="110" height="77" border="0" alt="Home"></a>
 		</div>
 	
 		<div class="collapse navbar-collapse">
 		<div class="navbar-form navbar-left">
 		<div class="btn-group">
-			<button onclick="location.href='/index.html';" class="btn btn-info">Main Page</button>
+			<button onclick="location.href='main_page.html';" class="btn btn-info">Main Page</button>
 		</div>
 		</div>
 		
@@ -95,7 +96,7 @@
 		
 		<div class="input-group">
 		  <span class="input-group-btn">
-			<button id="arduin_sdk_pathid" class="btn btn-default" type="button">Arduino SDK Path</button>
+			<button id="arduin_sdk_pathid" class="btn btn-default" type="button">Merkurboard SDK Path</button>
 		  </span>
 		  <input id="arduino_sdk_panel" type="text" class="form-control">
 		</div><!-- /input-group -->
@@ -103,7 +104,7 @@
 		<div class="input-group">
 		  <span class="input-group-btn">
 		  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-			Arduino Board Type <span class="caret"></span>
+			Merkurboard Board Type <span class="caret"></span>
 		  </button>
 		  <ul id="arduino_board_list" class="dropdown-menu" role="menu">
 			<li><a href="#">ATmega48P</a></li>
@@ -120,7 +121,7 @@
 		<div class="input-group">
 		<span class="input-group-btn">
 		  <button id="serial_rate_btn" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-			Arduino Serial Baud Rate <span class="caret"></span>
+			Merkurboard Serial Baud Rate <span class="caret"></span>
 		  </button>
 		  <ul id="serial_rate_list" class="dropdown-menu" role="menu">
 			<li><a tabindex="-1" href="#">VAR_bauds1</a></li>
@@ -133,7 +134,7 @@
 		<input id="arduino_serial_rate" type="text" class="form-control cl-4">
 
 		<span class="input-group-btn">
-		  <button id="update_rate_btn" class="btn btn-default" type="button">Arduino Poll Rate</button>
+		  <button id="update_rate_btn" class="btn btn-default" type="button">Merkurboard Poll Rate</button>
 		</span>
 		<input id="update_rate" type="text" class="form-control cl-4" >
 
