@@ -147,102 +147,157 @@
 	
 	</nav>
 
-	<div class="row">
+<!-- 	<div class="row">
 	  <div class="col-xs-8">
+ -->		  
+	<div class="panel-group" id="accordion">
 			<div class="panel panel-default">
-			  <div class="panel-heading"><h8>Merkurboard Controls - Analog Outputs</h8></div>
+			  <div class="panel-heading"><h8>Merkurboard - Connectors</h8></div>
 			  <div class="panel-body">
-				<div class="row">	
-					<div id="g1" style="width:150px; height:120px;display: inline-block;margin: 1em;"></div> 
-					<div id="g2" style="width:150px; height:120px;display: inline-block;margin: 1em;"></div> 
-					<div id="g3" style="width:150px; height:120px;display: inline-block;margin: 1em;"></div> 
-					<div id="g4" style="width:150px; height:120px;display: inline-block;margin: 1em;"></div> 
-				</div>
-			  </div>
-			</div>
 
-			<div class="panel panel-default">
-			  <div class="panel-heading"><h8>Merkurboard Controls - Analog Inputs</h8></div>
-			  <div class="panel-body">
-				<p>Input is converted from 0.0->1.0 to 0->1024</p>
-			  </div>
-				
-			  <table  class="table" width="100%">
-				<tr>
-				<td>AI 0</td>
-				<td><input id="analoginput1" type="text" data-slider="true"></td>
-				<td>AI 1</td>
-				<td><input id="analoginput2" type="text" data-slider="true"></td>
-				</tr>
-				<tr>
-				<td>AI 2</td>
-				<td><input id="analoginput3" type="text" data-slider="true"></td>
-				<td>AI 3</td>
-				<td><input id="analoginput4" type="text" data-slider="true"></td>
-				</tr>
-				<tr>
-				<td>AI 4</td>
-				<td><input id="analoginput5" type="text" data-slider="true"></td>
-				<td>AI 5</td>
-				<td><input id="analoginput6" type="text" data-slider="true"></td>
-				</tr>
-				<tr>
-				<td>AI 6</td>
-				<td><input id="analoginput7" type="text" data-slider="true"></td>
-				<td>AI 7</td>
-				<td><input id="analoginput8" type="text" data-slider="true"></td>
-				</tr>
-			  </table>
-			</div>
-			
-			
-	  </div>
+  <h3 class="sectionedit6" id="steckerbelegung">Pin assignment</h3>
+  <div class="level3">
+  <div class="table sectionedit7"><table class="inline">
+	<tr class="row0">
+		<td class="col0" colspan="2"> <br/>
+		
+		<div class="input-group">
+		<span class="input-group-btn">
+		  <button id="serial_rate_btn" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			 Serial/Dig.<span class="caret"></span>
+		  </button>
+		  <ul id="serial_rate_list" class="dropdown-menu" role="menu">
+			<li><a tabindex="-1" href="#">VAR_bauds1</a></li>
+			<li><a tabindex="-1" href="#">VAR_bauds2</a></li>
+			<li><a tabindex="-1" href="#">VAR_bauds3</a></li>
+			<li><a tabindex="-1" href="#">VAR_bauds4</a></li>
+			<li><a tabindex="-1" href="#">VAR_bauds5</a></li>
+		  </ul>
+		</span>
+		<input id="arduino_serial_rate" type="text" class="form-control cl-4">
 
-	  
-	  <div class="col-md-4">
-		<div class="panel panel-default">
-			<div class="panel-heading"><h8>Merkurboard Controls - Digital</h8></div>
-			<div class="panel-body">
-			  <p>Green is HIGH and Red is LOW. Grey is disabled.<br> Press to toggle (only enabled ones)</p>
-			</div>
-				
-			<table  class="table" width="100%">
-				<tr>
-				<td><img id="digital00" alt="" /> D0</td>
-				<td><img id="digital04" alt="" /> D4</td>
-				<td><img id="digital08" alt="" /> D8</td>
-				<td><img id="digital12" alt="" /> D12</td>
-				</tr>
-				<tr>
-				<td><img id="digital01" alt="" /> D1</td>
-				<td><img id="digital05" alt="" /> D5</td>
-				<td><img id="digital09" alt="" /> D9</td>
-				<td><img id="digital13" alt="" /> D13</td>
-				</tr>
-				<tr>
-				<td><img id="digital02" alt="" /> D2</td>
-				<td><img id="digital06" alt="" /> D6</td>
-				<td><img id="digital10" alt="" /> D10</td>
-				</tr>
-				<tr>
-				<td><img id="digital03" alt="" /> D3</td>
-				<td><img id="digital07" alt="" /> D7</td>
-				<td><img id="digital11" alt="" /> D11</td>
-				</tr>
-			</table>
+</td><td class="col2" rowspan="14"><a href="img/merkur-grove4.jpg" class="media" title="de:products:merkur-grove4.jpg"><img src="img/merkur-grove4.jpg" class="media" alt="" width="550" /></a></td><td class="col3" colspan="2"><br/>
 
-			</div>  
-		<div class="panel panel-default">
-			<div class="panel-heading"><h8>Notes</h8></div>
-			<div class="panel-body">
-			  <p>On Merkurboard devices most share their digital outputs<br>
-			  with the analog outputs. The result is a single digital<br>
-			  pin can be used to drive digital or analog outputs.<br>
-			  Use the config to define how your Merkurboard is used.</p>
-			</div>
+		<div class="input-group">
+		<span class="input-group-btn">
+		  <button id="serial_rate_btn" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			 Analog/Dig.<span class="caret"></span>
+		  </button>
+		  <ul id="serial_rate_list" class="dropdown-menu" role="menu">
+			<li><a tabindex="-1" href="#">VAR_bauds1</a></li>
+			<li><a tabindex="-1" href="#">VAR_bauds2</a></li>
+			<li><a tabindex="-1" href="#">VAR_bauds3</a></li>
+			<li><a tabindex="-1" href="#">VAR_bauds4</a></li>
+			<li><a tabindex="-1" href="#">VAR_bauds5</a></li>
+		  </ul>
+		</span>
+		<input id="arduino_serial_rate" type="text" class="form-control cl-4">
+
+</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">J3:1 </td><td class="col1">GND</td><td class="col2">A5/D20 </td><td class="col3">J2:4 </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">J3:2 </td><td class="col1">3.3V</td><td class="col2">A4/D19</td><td class="col3">J2:3 </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">J3:3 </td><td class="col1">TxD1/D6</td><td class="col2">3.3V </td><td class="col3">J2:3 </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">J3:4 </td><td class="col1">RxD1/D7</td><td class="col2">GND </td><td class="col3">J2:1 </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> </td><td class="col1"> </td><td class="col2"> </td><td class="col3"> </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0" colspan="2">
+		
+		<div class="input-group">
+		<span class="input-group-btn">
+		  <button id="serial_rate_btn" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			 Dig. PWM<span class="caret"></span>
+		  </button>
+		  <ul id="serial_rate_list" class="dropdown-menu" role="menu">
+			<li><a tabindex="-1" href="#">VAR_bauds1</a></li>
+			<li><a tabindex="-1" href="#">VAR_bauds2</a></li>
+			<li><a tabindex="-1" href="#">VAR_bauds3</a></li>
+			<li><a tabindex="-1" href="#">VAR_bauds4</a></li>
+			<li><a tabindex="-1" href="#">VAR_bauds5</a></li>
+		  </ul>
+		</span>
+		<input id="arduino_serial_rate" type="text" class="form-control cl-4">
+
+		
+		 </td><td class="col2" colspan="2">
+			 
+		<div class="input-group">
+		<span class="input-group-btn">
+		  <button id="serial_rate_btn" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			 I2C/Dig.<span class="caret"></span>
+		  </button>
+		  <ul id="serial_rate_list" class="dropdown-menu" role="menu">
+			<li><a tabindex="-1" href="#">VAR_bauds1</a></li>
+			<li><a tabindex="-1" href="#">VAR_bauds2</a></li>
+			<li><a tabindex="-1" href="#">VAR_bauds3</a></li>
+			<li><a tabindex="-1" href="#">VAR_bauds4</a></li>
+			<li><a tabindex="-1" href="#">VAR_bauds5</a></li>
+		  </ul>
+		</span>
+		<input id="arduino_serial_rate" type="text" class="form-control cl-4">
+
+
+	</tr>
+	<tr class="row7">
+		<td class="col0">J4:1 </td><td class="col1">GND</td><td class="col2">SDA/D8</td><td class="col3">J1:4</td>
+	</tr>
+	<tr class="row8">
+		<td class="col0">J4:2 </td><td class="col1">3.3V</td><td class="col2">SCL/D9</td><td class="col3">J1:3 </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0">J4:3 </td><td class="col1">PWM/D14</td><td class="col2">3.3V</td><td class="col3">J1:2 </td>
+	</tr>
+	<tr class="row10">
+		<td class="col0">J4:4 </td><td class="col1">PWM/D3</td><td class="col2">GND</td><td class="col3">J1:1 </td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"> </td><td class="col1"> </td><td class="col2"> </td><td class="col3"> </td>
+	</tr>
+	<tr class="row12">
+		<td class="col0"> </td><td class="col1"> </td><td class="col2"> </td><td class="col3"> </td>
+	</tr>
+	<tr class="row13">
+		<td class="col0"> </td><td class="col1"> </td><td class="col2"> </td><td class="col3"> </td>
+	</tr>
+    </table></div>
+
 		</div>
+	   </div>		
+	  </div>
+	  </div>
+<!--	 
 	  </div>
 	</div>
+ -->	
+	<div class="panel-group" id="accordion">
+	  <div class="panel panel-default">
+		<div class="panel-heading">
+		  <h4 class="panel-title">
+			<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+			  <h8>Notes</h8>
+			</a>
+		  </h4>
+		</div>
+		<div id="collapseOne" class="panel-collapse collapse in">
+		  <div class="panel-body">
+			  <p>On Merkurboard devices must share the digital outputs<br>
+			  with the analog outputs. The result is a single<br>
+			  pin can be used to drive digital or analog outputs.<br>
+			  Use the config to define how your Merkurboard is used.</p>
+		  </div>
+		</div>
+	  </div>	
+	</div>	
 
 	<div class="panel-group" id="accordion">
 	  <div class="panel panel-default">
