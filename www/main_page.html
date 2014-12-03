@@ -131,16 +131,20 @@
 		</div>
 		</nav>
 		<nav class="navbar-form navbar-right" role="search">
-		<div class="btn-group">
-			<button onclick="location.href='/enablecomms.html?VAR_tval';" class="btn btn-danger">Reset Serial</button>
-		</div>
-  
+		
 		<div class="input-group">
 		  <span class="input-group-btn">
-			<button id="update_serial_name_btn" class="btn btn-default" type="button">Device</button>
+		  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			Board Type <span class="caret"></span>
+		  </button>
+		  <ul id="arduino_board_list" class="dropdown-menu" role="menu">
+			<li><a href="#">Merkurboard Grove-4</a></li>
+		  </ul>
 		  </span>
-		  <input  id="serial_name" type="text" class="form-control" style="width:80px;">
-		</div><!-- /input-group -->
+		  <p id="arduino_board" class="navbar-text"></p>
+		</div>
+  
+		
 		</nav>
 	</div>
 	</div>
@@ -152,7 +156,7 @@
  -->		  
 	<div class="panel-group" id="accordion">
 			<div class="panel panel-default">
-			  <div class="panel-heading"><h8>Merkurboard - Connectors</h8></div>
+			  <div class="panel-heading"><h8>Merkurboard - Grove-4</h8></div>
 			  <div class="panel-body">
 
   <h3 class="sectionedit6" id="steckerbelegung">Pin assignment</h3>
