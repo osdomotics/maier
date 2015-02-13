@@ -1,0 +1,40 @@
+apache2
+-------
+apt-get install apache2
+
+Maier
+-----
+git clone https://github.com/osdomotics/maier.git
+
+
+OSD-Contiki
+-----------
+apt-get install avr-libc binutils-avr gcc-avr gdb-avr simulavr avrdude libncurses5-dev
+apt-get install screen 
+mkdir install
+cd install
+git clone https://github.com/osdomotics/osd-contiki.git
+cd osd-contiki
+git checkout osd
+git submodule update --init
+
+node-js
+-------
+wget http://nodejs.org/dist/v0.10.28/node-v0.10.28-linux-arm-pi.tar.gz
+tar -xzf node-v0.10.28-linux-arm-pi.tar.gz
+sudo cd /usr/local && tar --strip-components 1 -xzf /home/pi/node-v0.10.28-linux-arm-pi.tar.gz
+
+node-red
+--------
+git clone https://github.com/node-red/node-red.git
+cd node-red
+sudo npm install
+
+coap node-red
+-------------
+npm install node-red-contrib-coap
+npm install coap
+
+
+Links:
+https://learn.adafruit.com/raspberry-pi-hosting-node-red/setting-up-node-dot-js
