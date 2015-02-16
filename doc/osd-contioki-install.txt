@@ -11,8 +11,6 @@ OSD-Contiki
 -----------
 apt-get install avr-libc binutils-avr gcc-avr gdb-avr simulavr avrdude libncurses5-dev
 apt-get install screen 
-mkdir install
-cd install
 git clone https://github.com/osdomotics/osd-contiki.git
 cd osd-contiki
 git checkout osd
@@ -33,7 +31,10 @@ sudo npm install
 coap node-red
 -------------
 npm install node-red-contrib-coap
-npm install coap
+
+coap cli
+--------
+npm install coap-cli -g
 
 
 Links:
